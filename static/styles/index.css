@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Sofia:wght@400;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+html,body{
+  display: grid;
+  height: 100%;
+  text-align: center;
+  background-color: white;
+}
+
+.header {
+  text-align: left;
+  background: #313438;
+  color: white;
+}
+
+#logo{
+  width:300px;
+  padding:10px;
+  align-items: right;
+  padding-top:5px;
+}
+
+#cover{
+  background-size: cover;
+  width: 100%;
+}
+
+#mission{
+  padding:30px;
+}
+#mission-title{
+  font-size: 30px;
+  font-weight:500;
+  padding:10px;
+}
+
+#mission-content{
+  font-size: 15px;
+  line-height: 1.6;
+  padding:10px;
+}
+#mission-footer{
+  font-family:"Sofia";
+  font-size: 15px;
+  color: #393b3d;
+}
+
+#dignosis{
+  position: relative;
+}
+#cover-diagnosis{
+  width:100%;
+}
+
+.cover-diagnosis-text {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 60px;
+  font-weight: 600;
+}
+
+#dignosis-content
+{
+  position:absolute;
+  padding:10px;
+  font-weight: 500;
+  bottom:40%;
+  color:white;
+  font-size:20px;
+  transform: translate(-50%, -50%);
+  left: 50%;
+}
+
+#diagnosis-btn{
+  position: absolute;
+	padding: 16px;
+	background-color: #6db0c2;
+	border-radius: 25px;
+	left: 200px;
+  left: 50%;
+  bottom:28%;
+  border:0px;
+  transform: translate(-50%, -50%);
+  font-size:15px;
+  color:white;
+  font-weight: 800;
+}
+#diagnosis-btn:hover{
+  background-color:#7fcee3 ;
+}
+
+.container{
+  height: 350px;
+  width: 430px;
+  place-items: center;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%)
+}
+.container .wrapper{
+  position: relative;
+  height: 300px;
+  width: 100%;
+  border-radius: 10px;
+  background: #fff;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.wrapper.active{
+  border: none;
+}
+.wrapper .image{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wrapper img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.wrapper .icon{
+  font-size: 100px;
+  color: black;
+}
+.wrapper .text{
+  font-size: 12px;
+  /* font-weight: 500; */
+  color: #5B5B7B;
+}
+.wrapper #cancel-btn i{
+  position: absolute;
+  font-size: 20px;
+  right: 15px;
+  top: 15px;
+  color: black;
+  cursor: pointer;
+  display: none;
+}
+.wrapper.active:hover #cancel-btn i{
+  display: block;
+}
+.wrapper #cancel-btn i:hover{
+  color: #e74c3c;
+}
+.wrapper .file-name{
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  padding: 8px 0;
+  font-size: 18px;
+  color: #fff;
+  display: none;
+  background: linear-gradient(135deg,#3a8ffe 0%,black 100%);
+}
+.wrapper.active:hover .file-name{
+  display: block;
+}
+
+.container #custom-btn{
+  margin-top: 30px;
+  display: block;
+  /* width: 100%; */
+  /* height: 25px; */
+  /* border: none; */
+  /* outline: none; */
+  /* color: #fff; */
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  /* background: black; */
+}
+
+#Diagnose-now
+{
+  position:absolute;
+  padding-left:20px;
+  padding-right:20px;
+  border-radius: 15px;
+  /* width:40%; */
+  height: 35px;
+  background-color: white;
+  border:black solid 2px;
+  color:black;
+  left: 50%;
+  font-weight: 900;
+  transform: translate(-50%, -50%);
+}
+
+#Diagnose-now:hover
+{
+  background-color: black;
+  color:white;
+}
+
+#custom-btn , #diagnose-now{
+  position:absolute;
+  padding-left:20px;
+  padding-right:20px;
+  border-radius: 15px;
+  /* width:40%; */
+  height: 35px;
+  background-color: white;
+  border:black solid 2px;
+  color:black;
+  left: 50%;
+  font-weight: 900;
+  transform: translate(-50%, -50%);
+}
+
+#custom-btn:hover , #diagnose-now:hover{
+  background-color: black;
+  color:white;
+}
+
+#footer{
+  padding:40px;
+  background-color: #313438;
+  color: white;
+}
+
+#created-by{
+  font-family:"Sofia";
+  font-size: 10px;
+  font-weight: 10px;
+}

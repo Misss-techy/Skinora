@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Sofia:wght@400;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+html,body{
+  display: grid;
+  text-align: center;
+  background-color: white;
+}
+
+.header {
+  text-align: left;
+  background: #313438;
+  color: white;
+}
+
+#logo{
+    width:300px;
+    align-items: right;
+    padding-top:5px;
+}
+
+table
+{
+    padding:10px;
+    text-align:center;
+    /* left: 50%;
+    transform: translate(-50%, -50%); */
+}
+
+#disease-img
+{
+    width:120px;
+    height:120px;
+}
+
+/* #skin-disease
+{
+    padding:15px;
+    padding-left: 20px;
+    padding-right:20px;
+} */
+
+#disease-heading
+{
+    font-size:15px;
+    /* padding:10px; */
+}
+
+#disease-content
+{
+    font-family:"Sofia";
+    font-size: 13px;
+    font-weight: 10px;
+    color:black;
+    font-style: italic;
+}
+
+table {
+    border-spacing: 110px 15px;}
+/* td    {padding: 6px;} */
+
+#footer{
+    padding:40px;
+    background-color: #313438;
+    color: white;
+  }
+  
+  #created-by{
+    font-family:"Sofia";
+    font-size: 10px;
+    font-weight: 10px;
+  }

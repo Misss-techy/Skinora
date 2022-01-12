@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+    <head>  
+        <meta charset="utf-8">
+        <title>Skin Disease diagnoser</title>
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/index.css') }}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+        <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    </head>
+    <body>
+        <div class="header">
+            <img id="logo" src="{{url_for('static', filename='Images/skinora.png')}}"/>
+        </div>
+        <div>
+        <img id="cover" src="{{url_for('static', filename='Images/cover-image.png')}}"/>
+        </div>
+        <br><br>
+        <div id="mission">
+            <b><p id="mission-title">Our mission is to provide the best care possible for your <br> dermatologic needs in a friendly, respectful environment.</p></b>
+            <p id="mission-content">Thank you for choosing our digital diagnoser. We are the world's first AI powered digital skin doctor.<br>
+                Our AI named skinora can predict 20+ skin diesases including Eczema, Melanoma, warts and even cancerous tumor. <br>
+                All is done in a single click of a button.  Skinora is trained with hundreds of affected skin rashes for hours to give the best<br>
+                possible result. Simply upload an image of your affected skin area, skinora analyses and prdicts the disease for you.</p><br>
+            <i><p id="mission-footer">Healthcare made easy and free. No need to travel miles to meet the dermatologist!</p></i>
+            <a href="#upload"><br><br><i><button id="Diagnose-now">Diagnose Now</button></i></a>
+            <!-- id="Diagnose-now" -->
+        </div>
+        <br><br>
+        <div id="dignosis">
+            <img id="cover-diagnosis" src="{{url_for('static', filename='Images/diagnosis.jpg')}}"/>
+            <div class="cover-diagnosis-text">DIAGNOSIS</div><br>
+            <p id="dignosis-content">From acne to melanoma, Skinora can handle all your dermatological needs in a single click of a button.</p><br>
+            <a href="{{ url_for('diseases') }}"><b><button id="diagnosis-btn">SEE WHAT DISEASE WE PREDICT </button></b></a>
+        </div>
+        <br><br>
+        <h2 id="title-upload">Dignose your skin disease</h2><br>
+        <i><p id="mission-footer">Upload an image of your affected skin area</p></i>
+        <br>
+        <!-- <form id="file-upload-form" class="uploader"> -->
+        <div id="upload">
+        <div class="container">
+            <div class="wrapper">
+                <div class="image">
+                   <img id="uploadimg" src="" alt="">
+                </div>
+                <div class="content">
+                    <div class="icon">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                    </div>
+                    <div class="text">
+                     No file chosen, yet! <br> upload only .jpg, .jpeg .png
+                    </div>
+                </div>
+                <div id="cancel-btn">
+                      <i class="fas fa-times"></i>
+                </div>
+                <div class="file-name">
+                      File name here
+                </div>
+            </div>
+                <br><b><button onclick="defaultBtnActive()" id="custom-btn">Choose a file</button></b><br>
+                <input id="default-btn" type="file" hidden>
+                <b><button id="diagnose-now">Diagnose</button></b><br>
+        </div>
+        </div>
+        <br><br><br>
+        <p id="output"></p>
+        <p id="message"></p>
+        <img src="" id="check">
+        <br><br><br>
+        <div id="footer">
+           <p>Powered by Azure</p><br>
+           <P id="created-by">created by mushina ♡</P>
+        </div>
+
+        <script type="text/javascript">
+            const wrapper = document.querySelector(".wrapper");
+            const fileName = document.querySelector(".file-name");
+            const defaultBtn = document.querySelector("#default-btn");
+            const customBtn = document.querySelector("#custom-btn");
+            const cancelBtn = document.querySelector("#cancel-btn i");
+            const img = document.querySelector('#uploadimg');
+            var message = document.getElementById("message");
+            document.getElementById("uploadimg").style.visibility = "hidden";
+            document.getElementById("diagnose-now").style.visibility = "hidden";
+
+            document.querySelectorAll('a[href^="#upload"]').forEach(anchor => {
+               anchor.addEventListener('click', function (e) {
+                   e.preventDefault();
+
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                   behavior: 'smooth'
+                   });
+               });
+            });
+
+            let regExp = /[0-9a-zA-Z\^\&\'\@\{\}\[\]\,\$\=\!\-\#\(\)\.\%\+\~\_ ]+$/;
+            function defaultBtnActive(){
+              defaultBtn.click();
+            }
+            defaultBtn.addEventListener("change", function(){
+              const file = this.files[0];
+              if(file){
+                const reader = new FileReader();
+                reader.onload = function(){
+                  const result = reader.result;
+                  img.src = result;
+                  document.getElementById("uploadimg").style.visibility = "visible";
+                  wrapper.classList.add("active");
+                  document.getElementById("custom-btn").style.visibility = "hidden";
+                  document.getElementById("diagnose-now").style.visibility = "visible";
+                }
+                cancelBtn.addEventListener("click", function(){
+                  // img.src = "";
+                  wrapper.classList.remove("active");
+                  document.getElementById("uploadimg").style.visibility = "hidden";
+                  fileName.textContent = "";
+                  document.getElementById("custom-btn").style.visibility = "visible";
+                  document.getElementById("diagnose-now").style.visibility = "hidden";
+                })
+                reader.readAsDataURL(file);
+              }
+              if(this.value){
+                let valueStore = this.value.match(regExp);
+                fileName.textContent = valueStore;
+              }
+                
+            });
+
+            function getDataUrl(img) {
+              // Create canvas
+              const canvas = document.createElement('canvas');
+              const ctx = canvas.getContext('2d');
+              // Set width and height
+              canvas.width = img.width;
+              canvas.height = img.height;
+              // Draw the image
+              ctx.drawImage(img, 0, 0);
+               return canvas.toDataURL('image/jpeg');
+            }        
+
+          
+            document.getElementById('diagnose-now').addEventListener('click', function() {
+
+            document.getElementById("output").innerHTML = "Loading...";
+            document.getElementById("output").style.visibility = "visible";
+
+            var baseenc = document.getElementById('uploadimg').getAttribute('src');
+
+            var data = {
+              'image_base64': baseenc
+                   }     
+            const getResult = async () => {
+              var result = await fetch('/classify', {
+                method: 'POST',
+                body: JSON.stringify(data),
+                headers: { 'Content-Type': 'application/json' }
+              })
+                var jsonResult = await result.json();
+                document.getElementById('message').innerHTML = "Predicted skin disease <strong>" + jsonResult['predicted']+"</strong>";
+                document.getElementById("output").style.visibility = "hidden";
+              }
+
+              getResult()
+         
+            });
+         </script>
+    </body>
+</html>

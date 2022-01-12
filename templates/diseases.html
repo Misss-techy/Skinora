@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Diagnosis</title>
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/diseases.css') }}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    </head>
+<body>
+    <div class="header">
+        <a href="{{ url_for('index') }}"><img id="logo" src="{{url_for('static', filename='Images/skinora.png')}}"/></a>
+    </div> 
+    <center><div id="diseases-list">
+        <br><br><p>Skinora uses sophisticated custom vision model to predict these following diseases,</p>
+        <table id="disease-table">
+            <tbody>
+            <tr>
+                <td id="skin-disease"><img id="disease-img" src="{{url_for('static', filename='Images/Acne and Rosacea.jpg')}}"><br></td>
+                <td id="skin-disease"><img id="disease-img" src="{{url_for('static', filename='Images/Actinic Keratosis Basal Cell.jpg')}}"><br></td>
+                <td id="skin-disease"><img id="disease-img" src="{{url_for('static', filename='Images/atopic-dermatitis.jfif')}}"><br></td>
+                <td id="skin-disease"><img id="disease-img" src="{{url_for('static', filename='Images/bullous-disease.jpg')}}"><br></td>
+            </tr>
+            <tr>
+                <td id="skin-disease"><h5 id="disease-heading">Acne and Rosacea</h5></td>
+                <td id="skin-disease"><h5 id="disease-heading">Actinic Keratosis Basal Cell <br>Carcinoma and other Malignant Lesions</h5></td>
+                <td id="skin-disease"><h5 id="disease-heading">Atopic Dermatitis</h5></td>
+                <td id="skin-disease"><h5 id="disease-heading">Bullous Disease</h5></td>
+            </tr> 
+            <tr>
+                <td id="skin-disease"><p id="disease-content">A condition that causes redness<br> and often small, red, pus-filled bumps on the face.</p></td>
+                <td id="skin-disease"><p id="disease-content">A type of skin cancer that begins<br> in the basal cells.</p></td>
+                <td id="skin-disease"><p id="disease-content">Skin becomes red, swollen, and sore.</p></td>
+                <td id="skin-disease"><p id="disease-content">Rare skin condition that causes<br> large, fluid-filled blisters.</p></td>
+            <!-- </tr>     
+            </tbody>
+        </table><br>
+        <table id="disease-table">
+            <tbody> -->
+            <tr class="blank_row">
+                    <td bgcolor="#FFFFFF" colspan="3">&nbsp;</td>
+            </tr>
+            <tr>
+                <td id="skin-disease"><img id="disease-img" src="{{url_for('static', filename='Images/Cellulitis Impetigo.jpg')}}"><br></td>
+                <td id="skin-disease"><img id="disease-img" src="{{url_for('static', filename='Images/Eczema.jfif')}}"><br></td>
+                <td id="skin-disease"><img id="disease-img" src="{{url_for('static', filename='Images/Exanthems.jfif')}}"><br></td>
+                <td id="skin-disease"><img id="disease-img" src="{{url_for('static', filename='Images/Hair Loss.jpg')}}"><br></td>
+            </tr>
+            <tr>
+                <td id="skin-disease"><h5 id="disease-heading">Cellulitis Impetigo and<br>other Bacterial Infections</h5></td>
+                <td id="skin-disease"><h5 id="disease-heading">Eczema</h5></td>
+                <td id="skin-disease"><h5 id="disease-heading">Exanthems and Drug Eruptions</h5></td>
+                <td id="skin-disease"><h5 id="disease-heading">Hair Loss Alopecia and other Hair Diseases</h5></td>
+            </tr> 
+            <tr>
+                <td id="skin-disease"><p id="disease-content">A highly contagious skin infection<br> that causes red sores on the face.</p></td>
+                <td id="skin-disease"><p id="disease-content">An itchy inflammation of the skin.</p></td>
+                <td id="skin-disease"><p id="disease-content">A rash or eruption on the skin.</p></td>
+                <td id="skin-disease"><p id="disease-content">Hair loss from the scalp or<br> elsewhere on the body.</p></td>
+            </tr>  
+            <tr class="blank_row">
+                <td bgcolor="#FFFFFF" colspan="3">&nbsp;</td>
+        </tr>
+        <tr>
+            <td id="skin-disease"><img id="disease-img" src="{{url_for('static', filename='Images/Herpes HPV.jpg')}}"><br></td>
+            <td id="skin-disease"><img id="disease-img" src="{{url_for('static', filename='Images/Light Diseases.jpg')}}"><br></td>
+            <td id="skin-disease"><img id="disease-img" src="{{url_for('static', filename='Images/Lupus.jpg')}}"><br></td>
+            <td id="skin-disease"><img id="disease-img" src="{{url_for('static', filename='Images/Melanoma.jpg')}}"><br></td>
+        </tr>
+        <tr>
+            <td id="skin-disease"><h5 id="disease-heading">Herpes HPV and other STDs</h5></td>
+            <td id="skin-disease"><h5 id="disease-heading">Light Diseases and Disorders<br> of Pigmentation</h5></td>
+            <td id="skin-disease"><h5 id="disease-heading">Lupus and other Connective<br> Tissue diseases</h5></td>
+            <td id="skin-disease"><h5 id="disease-heading">Melanoma Skin Cancer<br> Nevi and Moles</h5></td>
+        </tr> 
+        <tr>
+            <td id="skin-disease"><p id="disease-content">A virus causing contagious sores,<br> most often around the mouth or on the genitals.</p></td>
+            <td id="skin-disease"><p id="disease-content">Condition that causes patches of light skin.</p></td>
+            <td id="skin-disease"><p id="disease-content">An inflammatory disease caused<br> when the immune system attacks its own tissues.</p></td>
+            <td id="skin-disease"><p id="disease-content">The most serious type of skin cancer.</p></td>
+        </tr>     
+        <tr class="blank_row">
+            <td bgcolor="#FFFFFF" colspan="3">&nbsp;</td>
+    </tr>
+    <tr>
+        <td id="skin-disease"><img id="disease-img" src="{{url_for('static', filename='Images/Nail Fungus.jfif')}}"><br></td>
+        <td id="skin-disease"><img id="disease-img" src="{{url_for('static', filename='Images/Contact Dermatitis.jpg')}}"><br></td>
+        <td id="skin-disease"><img id="disease-img" src="{{url_for('static', filename='Images/Psoriasis.jpg')}}"><br></td>
+        <td id="skin-disease"><img id="disease-img" src="{{url_for('static', filename='Images/Scabies Lyme.jpg')}}"><br></td>
+    </tr>
+    <tr>
+        <td id="skin-disease"><h5 id="disease-heading">Nail Fungus and other Nail Disease</h5></td>
+        <td id="skin-disease"><h5 id="disease-heading">Poison Ivy and<br> other Contact Dermatitis</h5></td>
+        <td id="skin-disease"><h5 id="disease-heading">Psoriasis Lichen <br>Planus and related diseases</h5></td>
+        <td id="skin-disease"><h5 id="disease-heading">Scabies Lyme Disease<br> and other Infestations and Bites</h5></td>
+    </tr> 
+    <tr>
+        <td id="skin-disease"><p id="disease-content">A nail fungus causing thickened,<br> brittle, crumbly or ragged nails.</p></td>
+        <td id="skin-disease"><p id="disease-content">A skin rash caused by contact with a certain substance.</p></td>
+        <td id="skin-disease"><p id="disease-content">A condition in which skin cells build<br> up and form scales and itchy, dry patches.</p></td>
+        <td id="skin-disease"><p id="disease-content">A contagious, intensely itchy skin <br>condition caused by a tiny, burrowing mite.</p></td>
+    </tr> 
+    <tr class="blank_row">
+        <td bgcolor="#FFFFFF" colspan="3">&nbsp;</td>
+</tr>
+<tr>
+    <td id="skin-disease"><img id="disease-img" src="{{url_for('static', filename='Images/Seborrheic.jfif')}}"><br></td>
+    <td id="skin-disease"><img id="disease-img" src="{{url_for('static', filename='Images/Systemic Disease.jfif')}}"><br></td>
+    <td id="skin-disease"><img id="disease-img" src="{{url_for('static', filename='Images/Tinea Ringworm.jpg')}}"><br></td>
+    <td id="skin-disease"><img id="disease-img" src="{{url_for('static', filename='Images/Urticaria Hives.jpg')}}"><br></td>
+</tr>
+<tr>
+    <td id="skin-disease"><h5 id="disease-heading">Seborrheic Keratoses and<br> other Benign Tumors</h5></td>
+    <td id="skin-disease"><h5 id="disease-heading">Systemic Disease</h5></td>
+    <td id="skin-disease"><h5 id="disease-heading">Tinea Ringworm Candidiasis<br> and other Fungal Infections</h5></td>
+    <td id="skin-disease"><h5 id="disease-heading">Urticaria Hives</h5></td>
+</tr> 
+<tr>
+    <td id="skin-disease"><p id="disease-content">A non-cancerous skin condition that<br> appears as a waxy brown, black or tan growth.</p></td>
+    <td id="skin-disease"><p id="disease-content">disease that affects other parts of<br> the body, or even the whole body. </p></td>
+    <td id="skin-disease"><p id="disease-content">A highly contagious fungal infection of the skin or scalp.</p></td>
+    <td id="skin-disease"><p id="disease-content">A skin rash triggered by a reaction<br> to food, medicine or other irritants..</p></td>
+</tr> 
+<tr class="blank_row">
+    <td bgcolor="#FFFFFF" colspan="3">&nbsp;</td>
+</tr>
+<tr>
+<td id="skin-disease"><img id="disease-img" src="{{url_for('static', filename='Images/Vascular Tumors.jfif')}}"><br></td>
+<td id="skin-disease"><img id="disease-img" src="{{url_for('static', filename='Images/Vasculitis.jfif')}}"><br></td>
+<td id="skin-disease"><img id="disease-img" src="{{url_for('static', filename='Images/warts.jpg')}}"><br></td>
+</tr>
+<tr>
+<td id="skin-disease"><h5 id="disease-heading">Vascular Tumors</h5></td>
+<td id="skin-disease"><h5 id="disease-heading">Vasculitis</h5></td>
+<td id="skin-disease"><h5 id="disease-heading">Warts Molluscum and other<br> Viral Infections</h5></td>
+</tr> 
+<tr>
+<td id="skin-disease"><p id="disease-content">Tumor of vascular origin.</p></td>
+<td id="skin-disease"><p id="disease-content">An inflammation of the blood vessels<br> that causes changes in the blood vessel walls.</p></td>
+<td id="skin-disease"><p id="disease-content">A small, fleshy bump on the skin or mucous<br> membrane caused by human papillomavirus.</p></td>
+</tr> 
+        </tbody>
+        </table>
+    </div></center>
+    <br><br><br>
+    <div id="footer">
+       <!-- <h6 id="created-by">Created by mushina ♡</h6><br><br> -->
+       <p>Powered by Azure</p><br>
+       <P id="created-by">created by mushina ♡</P>
+    </div>  
+</body>
+</html>
